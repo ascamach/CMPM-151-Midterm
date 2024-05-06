@@ -1,4 +1,4 @@
-#N canvas 31 -34 1920 1136 12;
+#N canvas 31 -30 1512 862 12;
 #X text 166 264 creation arguments are OSC address;
 #X text 168 225 set message to change OSC address;
 #X text 153 35 1 Set IP Address : network address;
@@ -6,7 +6,7 @@
 #X text 153 74 3 Set OSC Addresses (routing osc data;
 #X text 144 13 Key Settings;
 #X floatatom 32 181 5 0 0 0 - - - 0;
-#N canvas 1099 23 1920 1136 oscReceive 0;
+#N canvas 5 43 660 520 oscReceive 1;
 #X obj 55 184 netreceive -u -b;
 #X msg 78 143 listen 0;
 #X text 152 143 stop listening;
@@ -52,7 +52,7 @@
 #X msg 35 53 \; pd dsp \$1;
 #X obj 33 265 oscformat PD message;
 #X msg 65 226 set PD message;
-#N canvas 729 296 791 621 oscSend 0;
+#N canvas 721 279 791 621 oscSend 0;
 #X msg 158 207 disconnect;
 #X obj 61 253 netsend -u -b;
 #X obj 59 55 list prepend send;
