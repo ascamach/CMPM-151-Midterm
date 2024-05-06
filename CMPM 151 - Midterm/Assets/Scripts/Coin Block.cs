@@ -31,14 +31,14 @@ public class CoinBlock : MonoBehaviour
             if(randomNum >= 1 && randomNum <= 25)
             {
                 Debug.Log("Life Get");
+                //Play 1-Up SFX Here
                 rend.color = newColor;
                 active = false;
             }
             else
             {
+                //Play Coin Collected SFX Here
                 Debug.Log("Coin Get");
-                //rend.color = newColor;
-                //active = false;
             }
 
 

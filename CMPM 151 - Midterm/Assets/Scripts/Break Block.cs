@@ -23,6 +23,7 @@ public class BreakBlock : MonoBehaviour
         
         if(collision.gameObject.tag == "Player")
         {
+            //Play a Breaking Block SFX Here
             Debug.Log("Breaking Block");
             block.SetActive(false);
 

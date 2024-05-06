@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        
+        //Initialize OSC Sound Here
     }
 
     // Update is called once per frame
@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         if (Input.GetButtonDown("Jump") && isGrounded())
         {
+            //Play a Jump SFX Here
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
         }
 
