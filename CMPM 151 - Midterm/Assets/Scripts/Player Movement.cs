@@ -17,6 +17,12 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         //Initialize OSC Sound Here
+        Application.runInBackground = true; //allows unity to update when not in focus
+
+        //************* Instantiate the OSC Handler...
+        OSCHandler.Instance.Init();
+        OSCHandler.Instance.SendMessageToClient("pd", "/unity/ready", "ready");
+        //*************
     }
 
     // Update is called once per frame

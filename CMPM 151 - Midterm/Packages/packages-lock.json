@@ -112,7 +112,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.cinemachine": {
-      "version": "2.9.5",
+      "version": "2.10.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -168,7 +168,7 @@
         "com.unity.sequences": "2.0.1",
         "com.unity.formats.fbx": "4.2.1",
         "com.unity.formats.alembic": "2.3.2",
-        "com.unity.cinemachine": "2.9.5",
+        "com.unity.cinemachine": "2.10.0",
         "com.unity.recorder": "4.0.2"
       }
     },
@@ -288,7 +288,7 @@
       }
     },
     "com.unity.visualscripting": {
-      "version": "1.9.2",
+      "version": "1.9.4",
       "depth": 0,
       "source": "registry",
       "dependencies": {
