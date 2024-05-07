@@ -31,13 +31,13 @@ public class CoinBlock : MonoBehaviour
             if(randomNum >= 1 && randomNum <= 25)
             {
                 Debug.Log("Life Get");
-                //Play 1-Up SFX Here
+                OSCHandler.Instance.SendMessageToClient("pd", "/unity/life", 0);
                 rend.color = newColor;
                 active = false;
             }
             else
             {
-                //Play Coin Collected SFX Here
+                OSCHandler.Instance.SendMessageToClient("pd", "/unity/coin", 0);
                 Debug.Log("Coin Get");
             }
 

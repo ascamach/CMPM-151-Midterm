@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private bool piano = false;
     
+    
 
     void Start()
     {
@@ -22,7 +23,8 @@ public class PlayerMovement : MonoBehaviour
 
         //************* Instantiate the OSC Handler...
         OSCHandler.Instance.Init();
-        OSCHandler.Instance.SendMessageToClient("pd", "/unity/ready", "ready");
+        OSCHandler.Instance.SendMessageToClient("pd", "/unity/bgm", 1);
+
         //*************
     }
 
@@ -63,13 +65,20 @@ public class PlayerMovement : MonoBehaviour
         if (piano == false)
         {
             piano = true;
-            OSCHandler.Instance.SendMessageToClient("pd", "/unity/switch", 1);
-            OSCHandler.Instance.SendMessageToClient("pd", "/unity/ready", "ready");
+            OSCHandler.Instance.SendMessageToClient("pd", "/unity/piano", 1);
+            OSCHandler.Instance.SendMessageToClient("pd", "/unity/bgm", 0);
         } else if (piano == true)
         {
             piano = false;
-            OSCHandler.Instance.SendMessageToClient("pd", "/unity/switch", 0);
-            OSCHandler.Instance.SendMessageToClient("pd", "/unity/ready", "ready");
+            OSCHandler.Instance.SendMessageToClient("pd", "/unity/piano", 0);
+            OSCHandler.Instance.SendMessageToClient("pd", "/unity/bgm", 1);
         }
+    }
+
+    void OnApplicationQuit()
+    {
+        Debug.Log("Application ending after " + Time.time + " seconds"); //Sometimes it works, sometimes the server gets shut down too soon 
+        OSCHandler.Instance.SendMessageToClient("pd", "/unity/piano", 0);
+        OSCHandler.Instance.SendMessageToClient("pd", "/unity/bgm", 0);
     }
 }

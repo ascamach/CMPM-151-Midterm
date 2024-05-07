@@ -23,7 +23,7 @@ public class BreakBlock : MonoBehaviour
         
         if(collision.gameObject.tag == "Player")
         {
-            //Play a Breaking Block SFX Here
+            OSCHandler.Instance.SendMessageToClient("pd", "/unity/block", 0);
             Debug.Log("Breaking Block");
             block.SetActive(false);
 

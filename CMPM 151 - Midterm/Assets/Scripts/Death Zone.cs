@@ -22,6 +22,7 @@ public class DeathZone : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            OSCHandler.Instance.SendMessageToClient("pd", "/unity/death", 1);
             player.SetActive(false);
             //play Death Sound
             StartCoroutine(reset());

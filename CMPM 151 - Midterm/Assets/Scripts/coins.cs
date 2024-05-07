@@ -15,7 +15,7 @@ public class coins : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -32,6 +32,7 @@ public class coins : MonoBehaviour
             {
                 collectCoin();
                 Debug.Log("Coin Collected");
+                OSCHandler.Instance.SendMessageToClient("pd", "/unity/coin", 0);
             }
         }
     }
