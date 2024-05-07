@@ -73,3 +73,6 @@ crashlytics-build.properties
 
 # Artifacts Folder for GitHub Actions
 /artifacts
+
+# DS_Store 
+.DS_Store
