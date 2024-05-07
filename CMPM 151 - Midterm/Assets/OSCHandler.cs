@@ -130,7 +130,10 @@ public class OSCHandler : MonoBehaviour
 	/// </summary>
 	void OnApplicationQuit() 
 	{
-		foreach(KeyValuePair<string,ClientLog> pair in _clients)
+        OSCHandler.Instance.SendMessageToClient("pd", "/unity/music", 1);
+        OSCHandler.Instance.SendMessageToClient("pd", "/unity/music", 0);
+
+        foreach (KeyValuePair<string,ClientLog> pair in _clients)
 		{
 			pair.Value.client.Close();
 		}

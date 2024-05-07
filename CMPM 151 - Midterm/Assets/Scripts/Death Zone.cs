@@ -33,6 +33,14 @@ public class DeathZone : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         Debug.Log("Waited 5 seconds");
+        foreach (KeyValuePair<string, ServerLog> pair in OSCHandler.Instance.Servers)
+        {
+            pair.Value.server.Close();
+        }
+        foreach (KeyValuePair<string, ClientLog> pair in OSCHandler.Instance.Clients)
+        {
+            pair.Value.client.Close();
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
