@@ -6,7 +6,7 @@
 #X text 153 74 3 Set OSC Addresses (routing osc data;
 #X text 144 13 Key Settings;
 #X floatatom 32 181 5 0 0 0 - - - 0;
-#N canvas 5 43 1920 1136 oscReceive 0;
+#N canvas 448 238 556 648 oscReceive 0;
 #X obj 55 184 netreceive -u -b;
 #X msg 78 143 listen 0;
 #X text 152 143 stop listening;
@@ -397,7 +397,7 @@
 #X connect 8 0 2 0;
 #X connect 9 0 5 0;
 #X restore 524 794 pd gameOver;
-#N canvas -338 171 1896 1112 sq2Music 0;
+#N canvas -8 229 1896 1112 sq2Music 0;
 #X obj 379 754 mtof;
 #X floatatom 379 732 5 0 0 0 - - - 0;
 #X obj 238 224 f;
@@ -683,7 +683,7 @@
 #X restore 78 657 pd winMusic;
 #X obj 77 621 r win;
 #X obj 769 141 bng 19 250 50 0 empty empty empty 0 -10 0 12 #00ff04 #000000 #000000;
-#N canvas 100 356 1920 1120 MusicControl 1;
+#N canvas -159 164 1920 1120 MusicControl 0;
 #X obj 244 128 r musicControl;
 #X msg 221 302 0;
 #X msg 273 299 1;
@@ -708,6 +708,7 @@
 #X msg 621 422 1;
 #X msg 663 424 0;
 #X obj 656 399 delay 100;
+#X text 699 462 fuck this shit \, atleast it works \, eventhough it doesnt matter;
 #X connect 0 0 17 0;
 #X connect 1 0 15 0;
 #X connect 2 0 15 0;
