@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private bool piano = false;
     
 
     void Start()
@@ -39,6 +40,11 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            SwitchBGM();
+        }
     }
 
     private void FixedUpdate()
@@ -50,5 +56,20 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.3f, groundLayer);
+    }
+
+    private void SwitchBGM()
+    {
+        if (piano == false)
+        {
+            piano = true;
+            OSCHandler.Instance.SendMessageToClient("pd", "/unity/switch", 1);
+            OSCHandler.Instance.SendMessageToClient("pd", "/unity/ready", "ready");
+        } else if (piano == true)
+        {
+            piano = false;
+            OSCHandler.Instance.SendMessageToClient("pd", "/unity/switch", 0);
+            OSCHandler.Instance.SendMessageToClient("pd", "/unity/ready", "ready");
+        }
     }
 }

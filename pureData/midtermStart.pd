@@ -23,12 +23,12 @@
 #X obj 66 84 loadbang;
 #X floatatom 244 382 5 0 0 0 - - - 0;
 #X floatatom 339 382 5 0 0 0 - - - 0;
-#X obj 243 359 route test2;
 #X obj 338 359 route test3;
-#X obj 244 409 s val2;
 #X obj 339 409 s val3;
 #X obj 139 357 route ready;
 #X obj 139 399 s bgm;
+#X obj 244 409 s piano;
+#X obj 243 359 route switch;
 #X connect 0 0 6 0;
 #X connect 0 0 8 0;
 #X connect 1 0 0 0;
@@ -36,15 +36,15 @@
 #X connect 8 0 9 0;
 #X connect 9 0 11 0;
 #X connect 11 0 16 0;
-#X connect 11 0 17 0;
-#X connect 11 0 20 0;
+#X connect 11 0 18 0;
+#X connect 11 0 21 0;
 #X connect 12 0 0 0;
 #X connect 13 0 12 0;
-#X connect 14 0 18 0;
-#X connect 15 0 19 0;
-#X connect 16 0 14 0;
-#X connect 17 0 15 0;
-#X connect 20 0 21 0;
+#X connect 14 0 20 0;
+#X connect 15 0 17 0;
+#X connect 16 0 15 0;
+#X connect 18 0 19 0;
+#X connect 21 0 14 0;
 #X restore 36 129 pd oscReceive;
 #X obj 36 23 tgl 15 0 empty empty empty 17 7 0 10 #0400ff #000000 #000000 0 1;
 #X msg 35 53 \; pd dsp \$1;
@@ -260,7 +260,7 @@
 #X connect 4 0 9 0;
 #X connect 9 0 2 0;
 #X restore -169 24 pd soundExample;
-#X obj 589 273 tgl 15 0 samPlay empty Play\ Sample 17 7 0 10 #00ff04 #000000 #000000 0 1;
+#X obj 585 295 tgl 15 0 samPlay empty Play\ Sample 17 7 0 10 #00ff04 #000000 #000000 0 1;
 #N canvas 0 25 1440 776 musicTest 0;
 #X obj 310 514 mtof;
 #X floatatom 310 492 5 0 0 0 - - - 0;
@@ -553,7 +553,7 @@
 #X connect 28 0 1 0;
 #X connect 29 0 1 0;
 #X restore -468 620 pd musicTest;
-#N canvas 0 25 1440 776 musicTest 0;
+#N canvas 0 25 1440 776 musicTest 1;
 #X obj 310 514 mtof;
 #X floatatom 310 492 5 0 0 0 - - - 0;
 #X obj 238 224 f;
@@ -628,6 +628,7 @@
 #X restore 672 698 pd musicTest;
 #X obj 704 113 r bgm;
 #X obj 704 144 bng 19 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
+#X obj 580 260 r piano;
 #X connect 6 0 10 0;
 #X connect 8 0 9 0;
 #X connect 10 0 13 0;
@@ -686,3 +687,4 @@
 #X connect 77 1 67 0;
 #X connect 78 0 79 0;
 #X connect 79 0 61 0;
+#X connect 80 0 72 0;
