@@ -1,4 +1,4 @@
-#N canvas 64 64 1920 1136 12;
+#N canvas 0 38 1512 862 12;
 #X text 166 264 creation arguments are OSC address;
 #X text 168 225 set message to change OSC address;
 #X text 153 35 1 Set IP Address : network address;
@@ -740,6 +740,7 @@
 #X connect 23 0 22 0;
 #X restore 30 367 pd MusicControl;
 #X text 150 369 manages which audio track to play;
+#X text -680 12 Created by: Jarod Spangler \, William Chen \, Addison Camacho;
 #X connect 6 0 10 0;
 #X connect 8 0 9 0;
 #X connect 10 0 13 0;
