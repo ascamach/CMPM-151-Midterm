@@ -41,6 +41,9 @@ public class DeathZone : MonoBehaviour
         {
             pair.Value.client.Close();
         }
+        PlayerMovement.score = 0;
+        PlayerMovement.life = 3;
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

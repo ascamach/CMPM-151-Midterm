@@ -74,6 +74,9 @@ public class Flag : MonoBehaviour
             pair.Value.server.Close();
         }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        PlayerMovement.score = 0;
+        PlayerMovement.life = 3;
+
     }
 
 }

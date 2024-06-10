@@ -31,13 +31,15 @@ public class CoinBlock : MonoBehaviour
             if(randomNum >= 1 && randomNum <= 25)
             {
                 Debug.Log("Life Get");
-                OSCHandler.Instance.SendMessageToClient("pd", "/unity/life", 0);
+                PlayerMovement.life++;
+                OSCHandler.Instance.SendMessageToClient("pd", "/unity/life", PlayerMovement.life);
                 rend.color = newColor;
                 active = false;
             }
             else
             {
-                OSCHandler.Instance.SendMessageToClient("pd", "/unity/coin", 0);
+                PlayerMovement.score++;
+                OSCHandler.Instance.SendMessageToClient("pd", "/unity/coin", PlayerMovement.score);
                 Debug.Log("Coin Get");
             }
 

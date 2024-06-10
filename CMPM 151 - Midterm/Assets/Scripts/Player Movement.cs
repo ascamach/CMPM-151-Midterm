@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityOSC;
 
+
 public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -14,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private bool setMusic = false;
+    public static int score = 0;
+    public static int life = 3;
     private int lms = -2;
     private Dictionary<string, ServerLog> servers = new Dictionary<string, ServerLog>();
 

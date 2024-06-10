@@ -32,7 +32,9 @@ public class coins : MonoBehaviour
             {
                 collectCoin();
                 Debug.Log("Coin Collected");
-                OSCHandler.Instance.SendMessageToClient("pd", "/unity/coin", 0);
+                PlayerMovement.score++;
+                Debug.Log(PlayerMovement.score);
+                OSCHandler.Instance.SendMessageToClient("pd", "/unity/coin", PlayerMovement.score);
             }
         }
     }
