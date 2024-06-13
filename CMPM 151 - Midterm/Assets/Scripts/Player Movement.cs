@@ -26,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
     public float targetTime = 1.0f;
     public static int timerCount = 999;
 
+    public bool lowTimer;
+
 
     void Start()
     {
@@ -40,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         OSCHandler.Instance.Init();
         OSCHandler.Instance.UpdateLogs();
         servers = OSCHandler.Instance.Servers;
-        
+
         /*foreach (KeyValuePair<string, ServerLog> item in servers)
         {
             // If we have received at least one packet,
@@ -66,6 +68,8 @@ public class PlayerMovement : MonoBehaviour
 
             }
         }*/
+
+        lowTimer = false;
 
     }
 
@@ -103,6 +107,11 @@ public class PlayerMovement : MonoBehaviour
         }
         m_MyText.text = " " + timerCount;
 
+        if (targetTime < 60.0f && !lowTimer)
+        {
+            lowTimer = true;
+            OSCHandler.Instance.SendMessageToClient("pd", "/unity/lowTimer", 1);
+        }
     }
 
     private void FixedUpdate()
