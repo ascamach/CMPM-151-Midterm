@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 using UnityOSC;
 
 
@@ -20,10 +22,14 @@ public class PlayerMovement : MonoBehaviour
     private int lms = -2;
     private Dictionary<string, ServerLog> servers = new Dictionary<string, ServerLog>();
 
+    public TMP_Text m_MyText;
+    public float targetTime = 1.0f;
+    public static int timerCount = 999;
 
 
     void Start()
     {
+        //m_MyText.text = "This is my text";
         //Initialize OSC Sound Here
         Application.runInBackground = true; //allows unity to update when not in focus
 
@@ -82,6 +88,21 @@ public class PlayerMovement : MonoBehaviour
         {
             SwitchBGM();
         }
+
+
+
+        targetTime -= Time.deltaTime;
+        Debug.Log(targetTime);
+        Debug.Log(Time.deltaTime);
+
+        if (targetTime <= 0.0f)
+        {
+            timerCount--;
+            targetTime = 1.0f;
+            OSCHandler.Instance.SendMessageToClient("pd", "/unity/timer", timerCount);
+        }
+        m_MyText.text = " " + timerCount;
+
     }
 
     private void FixedUpdate()

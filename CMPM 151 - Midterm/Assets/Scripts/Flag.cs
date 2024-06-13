@@ -75,7 +75,8 @@ public class Flag : MonoBehaviour
         }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         PlayerMovement.score = 0;
-        PlayerMovement.life = 3;
+        PlayerMovement.timerCount = 999;
+
 
     }
 
