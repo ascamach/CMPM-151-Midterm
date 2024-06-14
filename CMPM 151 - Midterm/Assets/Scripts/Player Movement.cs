@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
         }*/
 
         lowTimer = false;
-
+        OSCHandler.Instance.SendMessageToClient("pd", "/unity/lowTimer", 0);
     }
 
     // Update is called once per frame
