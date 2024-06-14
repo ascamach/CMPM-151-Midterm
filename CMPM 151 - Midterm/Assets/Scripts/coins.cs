@@ -31,7 +31,7 @@ public class coins : MonoBehaviour
             if (!collected)
             {
                 collectCoin();
-                Debug.Log("Coin Collected");
+                //Debug.Log("Coin Collected");
                 PlayerMovement.score++;
                 Debug.Log(PlayerMovement.score);
                 OSCHandler.Instance.SendMessageToClient("pd", "/unity/coin", PlayerMovement.score);

@@ -24,7 +24,7 @@ public class BreakBlock : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             OSCHandler.Instance.SendMessageToClient("pd", "/unity/block", 0);
-            Debug.Log("Breaking Block");
+            //Debug.Log("Breaking Block");
             block.SetActive(false);
 
         }

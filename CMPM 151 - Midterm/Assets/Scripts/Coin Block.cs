@@ -30,7 +30,7 @@ public class CoinBlock : MonoBehaviour
             randomNum = Random.Range(1, 101);
             if(randomNum >= 1 && randomNum <= 25)
             {
-                Debug.Log("Life Get");
+                //Debug.Log("Life Get");
                 PlayerMovement.life++;
                 OSCHandler.Instance.SendMessageToClient("pd", "/unity/life", PlayerMovement.life);
                 rend.color = newColor;
@@ -40,7 +40,7 @@ public class CoinBlock : MonoBehaviour
             {
                 PlayerMovement.score++;
                 OSCHandler.Instance.SendMessageToClient("pd", "/unity/coin", PlayerMovement.score);
-                Debug.Log("Coin Get");
+                //Debug.Log("Coin Get");
             }
 
 
